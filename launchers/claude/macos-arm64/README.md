@@ -11,7 +11,7 @@ The optional `config/Claude Direct Proxy.mobileconfig` profile sets the same ups
 
 The launcher uses the normal macOS filesystem and retains Claude's built-in permission settings. Claude Code reads your existing user and project configuration. Local shell commands and stdio MCP processes use a Claude Code shell prefix that removes the launcher's proxy variables. Remote HTTP MCP clients running within Claude may share the app proxy.
 
-To reuse Desktop MCP definitions from another installation, copy the `mcpServers` section from that copy's `claude_desktop_config.json` into the same file in the handoff's Desktop state directory. The Desktop launch script removes old proxy flags from the handoff profile while retaining its MCP entries.
+To reuse Desktop MCP definitions from another installation, copy the `mcpServers` section from that copy's `claude_desktop_config.json` into the same file in the launcher’s Desktop state directory. The Desktop launch script removes old proxy flags from the launcher profile while retaining its MCP entries.
 
 ## Routing scope
 

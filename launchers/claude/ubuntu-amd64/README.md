@@ -2,7 +2,7 @@
 
 Includes Anthropic's verified amd64 Desktop 5.11492.5 and CLI 2.1.325. Ubuntu uses the vendor package and checksums. Extract the archive, run `./setup.sh`, then run `./Open\ Claude.sh` for the desktop app or `bin/claude` for Claude Code. Quit a running Desktop instance before using the launcher.
 
-The launcher configures the upstream directly. No local relay or added network namespace is included. Claude keeps its normal home directory, MCP configuration, and built-in approval and sandbox settings. The shell prefix removes the handoff's proxy variables from supported shell commands and stdio MCP servers. HTTP MCP clients running inside Claude may share its proxy. Existing Claude Code settings or managed policy can override proxy variables. Review any old localhost proxy settings before launch.
+The launcher configures the upstream directly. No local relay or added network namespace is included. Claude keeps its normal home directory, MCP configuration, and built-in approval and sandbox settings. The shell prefix removes the launcher’s proxy variables from supported shell commands and stdio MCP servers. HTTP MCP clients running inside Claude may share its proxy. Existing Claude Code settings or managed policy can override proxy variables. Review any old localhost proxy settings before launch.
 
 The optional `config/desktop-managed.json` supplies the same proxy for `/etc/claude-desktop/managed-settings.json`. `config/managed-settings.json` contains the corresponding Claude Code proxy settings. Merge them through your normal administrator workflow if needed. Starting the Desktop app from its stock menu entry requires the managed Desktop policy for consistent routing.
 

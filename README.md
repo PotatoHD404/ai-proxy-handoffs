@@ -1,4 +1,4 @@
-# ChatGPT and Claude proxy handoffs
+# Direct proxy launchers for ChatGPT and Claude
 
 Three installable bundles for routing the desktop app and CLI through an HTTP or HTTPS proxy. Local shell commands and stdio MCP servers can use the host network and filesystem under the apps' normal permissions.
 
@@ -12,7 +12,7 @@ Use the ZIP assets on the [release page](https://github.com/PotatoHD404/ai-proxy
 | Apple Silicon Mac | [Claude Desktop + Claude Code](https://github.com/PotatoHD404/ai-proxy-handoffs/releases/download/v1.0.0/Claude-Direct-Proxy-macOS-arm64.zip) | Run `Open Claude.command`. |
 | Ubuntu amd64 | [Claude Desktop + Claude Code](https://github.com/PotatoHD404/ai-proxy-handoffs/releases/download/v1.0.0/Claude-Direct-Proxy-Ubuntu-amd64.zip) | Run `./setup.sh`, then `./Open\ Claude.sh`. |
 
-Each ZIP includes its own README. The `handoffs/` directory mirrors the launcher source, scripts, and configuration from the release. The runnable app bundles and vendor binaries are in the ZIP assets.
+Each ZIP includes its own README. The `launchers/` directory contains launcher source, scripts, and sample configuration organized by app and platform. The runnable app bundles and vendor binaries are in the ZIP assets.
 
 ## Configure your proxy
 
@@ -31,12 +31,11 @@ Use the command for your bundle. The desktop command scripts also accept `--prox
 
 ## Local tools and MCP
 
-- **Codex:** Run `Import Codex Config.command` to copy your existing `~/.codex/config.toml` into the handoff's profiles. It backs up the previous handoff config. Review any imported network or sandbox settings.
+- **Codex:** Run `Import Codex Config.command` to copy your existing `~/.codex/config.toml` into the launcher’s profiles. It backs up the previous launcher config. Review any imported network or sandbox settings.
 - **Claude Code:** The launcher reads the standard Claude configuration. Its local tool wrapper removes the launcher proxy variables for supported shell commands and stdio MCP processes.
-- **Claude Desktop on Mac:** Copy existing `mcpServers` definitions to the handoff's Desktop configuration if you want to reuse them. See the [Mac instructions](handoffs/claude-macos-arm64/README.md).
+- **Claude Desktop on Mac:** Copy existing `mcpServers` definitions to the launcher’s Desktop configuration if you want to reuse them. See the [Mac instructions](launchers/claude/macos-arm64/README.md).
 
 Proxy routing is set at the application level. HTTP MCP clients running inside the apps may share the app proxy. These launchers do not install an OS firewall.
-
 
 ## Integrity
 
