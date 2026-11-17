@@ -4,13 +4,13 @@ Three installable bundles for routing the desktop app and CLI through an HTTP or
 
 ## Downloads
 
-Use the ZIP assets on the [release page](https://github.com/PotatoHD404/ai-proxy-handoffs/releases/tag/v1.0.0).
+Use the ZIP assets on the [release page](https://github.com/PotatoHD404/chatgpt-claude-direct-proxy/releases/tag/v1.0.0).
 
 | Platform | Release asset | Start here |
 | --- | --- | --- |
-| Apple Silicon Mac | [ChatGPT + Codex](https://github.com/PotatoHD404/ai-proxy-handoffs/releases/download/v1.0.0/ChatGPT-Direct-Proxy-macOS-arm64.zip) | Double-click the top-level `ChatGPT.app` or run `Open ChatGPT.command`. |
-| Apple Silicon Mac | [Claude Desktop + Claude Code](https://github.com/PotatoHD404/ai-proxy-handoffs/releases/download/v1.0.0/Claude-Direct-Proxy-macOS-arm64.zip) | Run `Open Claude.command`. |
-| Ubuntu amd64 | [Claude Desktop + Claude Code](https://github.com/PotatoHD404/ai-proxy-handoffs/releases/download/v1.0.0/Claude-Direct-Proxy-Ubuntu-amd64.zip) | Run `./setup.sh`, then `./Open\ Claude.sh`. |
+| Apple Silicon Mac | [ChatGPT + Codex](https://github.com/PotatoHD404/chatgpt-claude-direct-proxy/releases/download/v1.0.0/ChatGPT-Direct-Proxy-macOS-arm64.zip) | Double-click the top-level `ChatGPT.app` or run `Open ChatGPT.command`. |
+| Apple Silicon Mac | [Claude Desktop + Claude Code](https://github.com/PotatoHD404/chatgpt-claude-direct-proxy/releases/download/v1.0.0/Claude-Direct-Proxy-macOS-arm64.zip) | Run `Open Claude.command`. |
+| Ubuntu amd64 | [Claude Desktop + Claude Code](https://github.com/PotatoHD404/chatgpt-claude-direct-proxy/releases/download/v1.0.0/Claude-Direct-Proxy-Ubuntu-amd64.zip) | Run `./setup.sh`, then `./Open\ Claude.sh`. |
 
 Each ZIP includes its own README. The `launchers/` directory contains launcher source, scripts, and sample configuration organized by app and platform. The runnable app bundles and vendor binaries are in the ZIP assets.
 
