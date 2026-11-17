@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+directory="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+source "$directory/proxy-env"
+handoff_proxy "$@"
+shift "$proxy_shift"
+printf -v settings '{"env":{"HTTP_PROXY":"%s","HTTPS_PROXY":"%s","ALL_PROXY":"%s","http_proxy":"%s","https_proxy":"%s","all_proxy":"%s","NO_PROXY":"","no_proxy":""}}' "$proxy" "$proxy" "$proxy" "$proxy" "$proxy" "$proxy"
+exec "$directory/claude-runtime" --settings "$settings" "$@"

@@ -1,0 +1,10 @@
+#!/bin/bash
+set -euo pipefail
+cd -- "$(dirname -- "$0")/.."
+umask 077
+state="$HOME/Library/Application Support/Claude Direct Proxy"
+config="$state/Desktop/claude_desktop_config.json"
+/bin/mkdir -p "$state/Desktop/tmp"
+if [[ -e "$config" ]]; then
+    /usr/bin/osascript -l JavaScript bin/prepare-desktop.js "$config"
+fi

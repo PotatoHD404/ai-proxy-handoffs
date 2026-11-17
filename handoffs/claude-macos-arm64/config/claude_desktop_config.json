@@ -1,0 +1,7 @@
+{
+  "chromiumFlags": [
+    "--proxy-server=http://172.20.10.1:1082",
+    "--proxy-bypass-list=<-loopback>",
+    "--disable-quic"
+  ]
+}

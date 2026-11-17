@@ -1,0 +1,29 @@
+#!/bin/bash
+set -euo pipefail
+cd -- "$(dirname -- "$0")/.."
+umask 077
+state="$HOME/Library/Application Support/OpenAI Direct Proxy"
+standard="$HOME/.codex/config.toml"
+for directory in "$state/Unified Desktop/codex" "$state/Code"; do
+    /bin/mkdir -p "$directory"
+    config="$directory/config.toml"
+    if [[ "${1:-}" == --import-config ]]; then
+        if [[ ! -f "$standard" ]]; then
+            printf 'Config does not exist: %s\n' "$standard" >&2
+            exit 1
+        fi
+        if [[ -e "$config" ]]; then
+            backup="$(/usr/bin/mktemp "$directory/config.toml.before-import.XXXXXX")"
+            /bin/cp "$config" "$backup"
+        fi
+        temporary="$(/usr/bin/mktemp "$directory/.config.toml.XXXXXX")"
+        /bin/cp "$standard" "$temporary"
+        /bin/mv -f "$temporary" "$config"
+    elif [[ ! -e "$config" ]]; then
+        /bin/cp -n config/config.toml "$config"
+    elif /usr/bin/cmp -s "$config" config/legacy-launcher.toml || /usr/bin/cmp -s "$config" <(/usr/bin/sed 's/127[.]0[.]0[.]1:1455,127[.]0[.]0[.]1:1457//g' config/legacy-launcher.toml) || /usr/bin/cmp -s "$config" config/legacy-full-access.toml; then
+        temporary="$(/usr/bin/mktemp "$directory/.config.toml.XXXXXX")"
+        /bin/cp config/config.toml "$temporary"
+        /bin/mv -f "$temporary" "$config"
+    fi
+done

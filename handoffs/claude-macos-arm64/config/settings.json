@@ -1,0 +1,13 @@
+{
+  "env": {
+    "HTTP_PROXY": "http://172.20.10.1:1082",
+    "HTTPS_PROXY": "http://172.20.10.1:1082",
+    "ALL_PROXY": "http://172.20.10.1:1082",
+    "http_proxy": "http://172.20.10.1:1082",
+    "https_proxy": "http://172.20.10.1:1082",
+    "all_proxy": "http://172.20.10.1:1082",
+    "NO_PROXY": "",
+    "no_proxy": "",
+    "DISABLE_AUTOUPDATER": "1"
+  }
+}

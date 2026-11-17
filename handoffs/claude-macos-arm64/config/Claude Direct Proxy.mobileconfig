@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.anthropic.claudecode</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>env</key>
+								<dict>
+									<key>ALL_PROXY</key>
+									<string>http://172.20.10.1:1082</string>
+									<key>DISABLE_AUTOUPDATER</key>
+									<string>1</string>
+									<key>HTTPS_PROXY</key>
+									<string>http://172.20.10.1:1082</string>
+									<key>HTTP_PROXY</key>
+									<string>http://172.20.10.1:1082</string>
+									<key>NO_PROXY</key>
+									<string></string>
+									<key>all_proxy</key>
+									<string>http://172.20.10.1:1082</string>
+									<key>http_proxy</key>
+									<string>http://172.20.10.1:1082</string>
+									<key>https_proxy</key>
+									<string>http://172.20.10.1:1082</string>
+									<key>no_proxy</key>
+									<string></string>
+								</dict>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+				<key>com.anthropic.claudefordesktop</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>disableAutoUpdates</key>
+								<true/>
+								<key>egressProxyUrl</key>
+								<string>http://172.20.10.1:1082</string>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>PayloadDisplayName</key>
+			<string>Claude proxy settings</string>
+			<key>PayloadIdentifier</key>
+			<string>local.claude.proxy.settings.preferences</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>26F0D656-D2B5-46BE-B4E8-CF86E47FA56C</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Routes Claude Desktop and Claude Code to the configured upstream HTTP proxy.</string>
+	<key>PayloadDisplayName</key>
+	<string>Claude direct proxy</string>
+	<key>PayloadIdentifier</key>
+	<string>local.claude.proxy.settings</string>
+	<key>PayloadScope</key>
+	<string>User</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>F51D0963-72F3-43C1-9EBE-CEE9BE7C763B</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>

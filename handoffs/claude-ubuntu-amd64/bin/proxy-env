@@ -1,0 +1,31 @@
+tool_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+handoff_proxy() {
+    proxy="${HANDOFF_PROXY-}"
+    proxy_shift=0
+    if [[ "${1:-}" == --proxy ]]; then
+        proxy="${2:-}"
+        proxy_shift=2
+    elif [[ "${1:-}" == --proxy=* ]]; then
+        proxy="${1#--proxy=}"
+        proxy_shift=1
+    elif [[ -z "${HANDOFF_PROXY+x}" ]]; then
+        local line extra
+        {
+            IFS= read -r line || [[ -n "$line" ]] || return 64
+            if IFS= read -r extra || [[ -n "$extra" ]]; then
+                printf '%s\n' 'config/proxy.txt must contain one proxy URL.' >&2
+                return 64
+            fi
+        } < "$tool_dir/../config/proxy.txt" || return 64
+        proxy="${line%$'\r'}"
+    fi
+    local pattern='^https?://([a-zA-Z0-9.-]+|\[[0-9a-fA-F:.]+\]):([0-9]{1,5})$'
+    if [[ ! "$proxy" =~ $pattern ]] || (( 10#${BASH_REMATCH[2]} < 1 || 10#${BASH_REMATCH[2]} > 65535 )); then
+        printf '%s\n' 'Set config/proxy.txt, HANDOFF_PROXY, or --proxy to an HTTP(S) URL with an explicit port.' >&2
+        return 64
+    fi
+    export HTTP_PROXY="$proxy" HTTPS_PROXY="$proxy" ALL_PROXY="$proxy"
+    export http_proxy="$proxy" https_proxy="$proxy" all_proxy="$proxy"
+    export NO_PROXY= no_proxy= DISABLE_AUTOUPDATER=1
+    export CLAUDE_CODE_SHELL_PREFIX="$tool_dir/host-tool"
+}

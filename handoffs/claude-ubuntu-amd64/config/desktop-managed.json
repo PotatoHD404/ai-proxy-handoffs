@@ -1,0 +1,4 @@
+{
+  "egressProxyUrl": "http://172.20.10.1:1082",
+  "disableAutoUpdates": true
+}

@@ -1,0 +1,2 @@
+[network_proxy]
+allow_upstream_proxy = true

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.openai.codex</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>ProxySettings</key>
+								<dict>
+									<key>ProxyBypassList</key>
+									<string>&lt;-loopback&gt;;127.0.0.1:1455;127.0.0.1:1457</string>
+									<key>ProxyMode</key>
+									<string>fixed_servers</string>
+									<key>ProxyServer</key>
+									<string>http://172.20.10.1:1082</string>
+								</dict>
+								<key>QuicAllowed</key>
+								<false/>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>PayloadDisplayName</key>
+			<string>ChatGPT browser proxy</string>
+			<key>PayloadIdentifier</key>
+			<string>local.openai.proxy.settings.browser</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>1EFA52E1-C81A-4B40-AD33-7694E39EDDAA</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>PayloadDisplayName</key>
+	<string>ChatGPT direct proxy</string>
+	<key>PayloadIdentifier</key>
+	<string>local.openai.proxy.settings</string>
+	<key>PayloadScope</key>
+	<string>User</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>5C6B3F82-1BDB-46AB-8CA1-B7CE75FFB703</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
