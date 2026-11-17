@@ -29,5 +29,3 @@ Edit `config/proxy.txt` to set the default. Use one URL with an explicit port, s
 ```
 
 HTTP and HTTPS proxy URLs are supported. The launchers accept host and port without embedded credentials. Quit the previous copy before changing a running Desktop app's proxy. An installed managed policy can take precedence. The shipped policies and sample configuration use the original address. Update the administrator-managed policy too if you use a different upstream.
-
-If macOS shows error -47, quit the old proxy handoff and extract this ZIP to a fresh folder. The top-level ChatGPT.app has its own Finder identity and starts the bundled runtime. Its launch log is at `~/Library/Logs/ChatGPT Proxy Launch.log`.

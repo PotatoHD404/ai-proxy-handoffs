@@ -17,7 +17,7 @@ Each ZIP includes its own README. The `handoffs/` directory mirrors the launcher
 ## Configure your proxy
 
 1. Extract the full ZIP into a fresh folder and keep its contents together.
-2. Edit `config/proxy.txt`. Enter one URL with an explicit port. The default is `http://172.20.10.1:1082`.
+2. Edit `config/proxy.txt` if you use a different proxy. The included default is already configured as the HTTP proxy `http://172.20.10.1:1082`. Use one URL with an explicit port.
 3. Open the app using the entry in the table. Restart it after changing the proxy.
 
 For a one-time CLI override, run this from the extracted directory:
@@ -37,15 +37,6 @@ Use the command for your bundle. The desktop command scripts also accept `--prox
 
 Proxy routing is set at the application level. HTTP MCP clients running inside the apps may share the app proxy. These launchers do not install an OS firewall.
 
-## ChatGPT launch error -47
-
-Quit the old proxy copy and extract the updated ZIP into a fresh folder. In Finder, open the top-level `ChatGPT.app`. In Terminal, use:
-
-```sh
-/bin/bash "$HOME/Downloads/ChatGPT-Direct-Proxy/Open ChatGPT.command"
-```
-
-The Finder launcher writes startup output to `~/Library/Logs/ChatGPT Proxy Launch.log`. A successful launch was verified from the extracted ZIP on macOS 27. A Tahoe runtime test has not been performed.
 
 ## Integrity
 
